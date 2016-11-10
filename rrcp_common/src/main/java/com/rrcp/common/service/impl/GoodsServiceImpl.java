@@ -5,6 +5,7 @@ import com.rrcp.common.dao.GoodsDao;
 import com.rrcp.common.dao.OrderDao;
 import com.rrcp.common.dao.UserDao;
 import com.rrcp.common.entity.Goods;
+import com.rrcp.common.entity.User;
 import com.rrcp.common.enums.ResultEnum;
 import com.rrcp.common.exception.BizException;
 import com.rrcp.common.service.GoodsService;

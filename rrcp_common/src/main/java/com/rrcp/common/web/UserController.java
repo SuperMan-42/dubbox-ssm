@@ -1,7 +1,7 @@
 package com.rrcp.common.web;
 
-import com.yingjun.ssm.entity.User;
-import com.yingjun.ssm.service.UserService;
+import com.rrcp.common.entity.User;
+import com.rrcp.common.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

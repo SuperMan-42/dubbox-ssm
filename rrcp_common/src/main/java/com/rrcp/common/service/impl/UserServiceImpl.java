@@ -2,6 +2,7 @@ package com.rrcp.common.service.impl;
 
 import com.rrcp.common.cache.RedisCache;
 import com.rrcp.common.dao.UserDao;
+import com.rrcp.common.entity.User;
 import com.rrcp.common.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

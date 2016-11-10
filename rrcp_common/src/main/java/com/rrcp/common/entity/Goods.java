@@ -2,6 +2,7 @@ package com.rrcp.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.rrcp.common.validator.CustomDateSerializer;
 import com.rrcp.common.validator.Not999;
 
 import javax.validation.constraints.Min;
@@ -26,7 +27,7 @@ public class Goods {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createTime;
 	
-	@JsonSerialize(using = CustomDateSerializer.class)  
+	@JsonSerialize(using = CustomDateSerializer.class)
 	private Date updateTime;
 	
 	public long getGoodsId() {

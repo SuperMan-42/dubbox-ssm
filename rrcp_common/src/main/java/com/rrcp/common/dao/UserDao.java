@@ -1,5 +1,6 @@
 package com.rrcp.common.dao;
 
+import com.rrcp.common.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

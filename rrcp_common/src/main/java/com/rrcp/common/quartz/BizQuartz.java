@@ -1,5 +1,6 @@
 package com.rrcp.common.quartz;
 
+import com.rrcp.common.cache.RedisCache;
 import com.rrcp.common.dao.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

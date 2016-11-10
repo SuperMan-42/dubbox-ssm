@@ -11,8 +11,8 @@
       <list>
         <option value="$PROJECT_DIR$/ra_parent/pom.xml" />
         <option value="$PROJECT_DIR$/ra_common/pom.xml" />
-        <option value="$PROJECT_DIR$/rrcp_parent/pom.xml" />
         <option value="$PROJECT_DIR$/rrcp_common/pom.xml" />
+        <option value="$PROJECT_DIR$/rrcp_parent/pom.xml" />
       </list>
     </option>
   </component>

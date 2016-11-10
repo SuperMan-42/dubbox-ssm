@@ -1,10 +1,10 @@
 package com.rrcp.common.web;
 
-import com.yingjun.ssm.dto.BaseResult;
-import com.yingjun.ssm.entity.Goods;
-import com.yingjun.ssm.enums.ResultEnum;
-import com.yingjun.ssm.exception.BizException;
-import com.yingjun.ssm.service.GoodsService;
+import com.rrcp.common.dto.BaseResult;
+import com.rrcp.common.entity.Goods;
+import com.rrcp.common.enums.ResultEnum;
+import com.rrcp.common.exception.BizException;
+import com.rrcp.common.service.GoodsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
