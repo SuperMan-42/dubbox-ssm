@@ -1,6 +1,7 @@
 package com.rrcp.web.exception;
 
 import com.alibaba.fastjson.JSON;
+import com.rrcp.dto.BaseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
