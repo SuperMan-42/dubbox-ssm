@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rrcp_common</artifactId>
-    <version>${ra_common.version}</version>
-    <packaging>war</packaging>
+    <version>${rrcp_common.version}</version>
+    <packaging>jar</packaging>
 
 </project>
