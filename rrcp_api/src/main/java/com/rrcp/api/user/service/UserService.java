@@ -1,6 +1,6 @@
-package com.rrcp.api.service;
+package com.rrcp.api.user.service;
 
-import com.rrcp.api.entity.User;
+import com.rrcp.api.user.entity.User;
 
 import java.util.List;
 

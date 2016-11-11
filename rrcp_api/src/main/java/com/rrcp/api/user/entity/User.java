@@ -1,4 +1,4 @@
-package com.rrcp.api.entity;
+package com.rrcp.api.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

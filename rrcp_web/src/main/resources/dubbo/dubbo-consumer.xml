@@ -16,7 +16,7 @@
     <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}"/>
 
     <!-- 用户服务接口 -->
-    <dubbo:reference interface="com.rrcp.api.service.UserService" id="userService"/>
+    <dubbo:reference interface="com.rrcp.api.user.service.UserService" id="userService"/>
 
 
 </beans>  
