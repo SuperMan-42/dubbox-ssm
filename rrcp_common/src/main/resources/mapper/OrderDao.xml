@@ -10,7 +10,7 @@
 		(#{userId},#{goodsId},#{title})
 	</insert>
 
-	<select id="queryByUserPhone" resultType="com.rrcp.common.entity.Order">
+	<select id="queryByUserPhone" resultType="Order">
 		SELECT *
 		FROM
 		_order, _user
@@ -20,7 +20,7 @@
 		_user.user_phone=#{userPhone}
 	</select>
 
-	<select id="queryAll" resultType="com.rrcp.common.entity.Order.Order">
+	<select id="queryAll" resultType="Order">
 		SELECT *
 		FROM _order
 		ORDER BY

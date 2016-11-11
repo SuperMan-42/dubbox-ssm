@@ -3,7 +3,7 @@
 <mapper namespace="com.rrcp.common.dao.GoodsDao">
 
 
-	<select id="queryAll" resultType="com.rrcp.common.entity.Goods">
+	<select id="queryAll" resultType="Goods">
 		SELECT *
 		FROM _goods
 		ORDER BY create_time DESC
