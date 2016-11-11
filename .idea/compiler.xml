@@ -22,15 +22,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="rrcp_api" />
         <module name="rrcp_common" />
         <module name="rrcp_parent" />
+        <module name="rrcp_service" />
+        <module name="rrcp_web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ra_common" target="1.7" />
       <module name="ra_parent" target="1.7" />
+      <module name="rrcp_api" target="1.7" />
       <module name="rrcp_common" target="1.7" />
       <module name="rrcp_parent" target="1.7" />
+      <module name="rrcp_service" target="1.7" />
+      <module name="rrcp_web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

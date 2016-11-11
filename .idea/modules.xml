@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pure.iml" filepath="$PROJECT_DIR$/pure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rrcp_api/rrcp_api.iml" filepath="$PROJECT_DIR$/rrcp_api/rrcp_api.iml" />
       <module fileurl="file://$PROJECT_DIR$/rrcp_common/rrcp_common.iml" filepath="$PROJECT_DIR$/rrcp_common/rrcp_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/rrcp_parent/rrcp_parent.iml" filepath="$PROJECT_DIR$/rrcp_parent/rrcp_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rrcp_service/rrcp_service.iml" filepath="$PROJECT_DIR$/rrcp_service/rrcp_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rrcp_web/rrcp_web.iml" filepath="$PROJECT_DIR$/rrcp_web/rrcp_web.iml" />
     </modules>
   </component>
 </project>
