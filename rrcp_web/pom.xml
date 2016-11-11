@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rrcp_web</artifactId>
+    <version>${rrcp_web.version}</version>
     <packaging>war</packaging>
 
     <dependencies>

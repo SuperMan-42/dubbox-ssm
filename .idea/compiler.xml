@@ -24,7 +24,6 @@
         <processorPath useClasspath="true" />
         <module name="rrcp_api" />
         <module name="rrcp_common" />
-        <module name="rrcp_parent" />
         <module name="rrcp_service" />
         <module name="rrcp_web" />
       </profile>

@@ -7,6 +7,7 @@
     <groupId>com.rrcp</groupId>
     <artifactId>rrcp_parent</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <rrcp_common.version>1.0.0</rrcp_common.version>
