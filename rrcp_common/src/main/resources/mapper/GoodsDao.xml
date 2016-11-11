@@ -2,8 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.rrcp.common.dao.GoodsDao">
 
-
-	<select id="queryAll" resultType="Goods">
+	<select id="queryAll" resultType="com.rrcp.common.entity.Goods">
 		SELECT *
 		FROM _goods
 		ORDER BY create_time DESC
