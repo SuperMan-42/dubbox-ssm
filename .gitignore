@@ -14,4 +14,5 @@ buildNumber.properties
 .idea/workspace.xml
 rrcp_api/target/
 rrcp_common/target/
+rrcp_service/target/
 rrcp_web/target/
