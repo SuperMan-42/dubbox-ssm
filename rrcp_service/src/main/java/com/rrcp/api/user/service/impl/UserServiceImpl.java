@@ -1,9 +1,8 @@
 package com.rrcp.api.user.service.impl;
 
 import com.rrcp.api.user.entity.User;
-import com.rrcp.api.user.service.UserService;
+import com.rrcp.core.user.dao.UserDao;
 import com.rrcp.util.cache.RedisCache;
-import core.user.dao.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

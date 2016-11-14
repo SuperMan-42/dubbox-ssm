@@ -45,7 +45,7 @@
         <!--注入SqlSessionFactory-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出需要扫描的Dao接口-->
-        <property name="basePackage" value="com.yingjun.ssm.core.user.dao"/>
+        <property name="basePackage" value="com.yingjun.ssm.com.rrcp.user.dao"/>
     </bean>
 
 </beans>

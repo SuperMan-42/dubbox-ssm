@@ -1,7 +1,7 @@
 package com.rrcp.web.controller;
 
 import com.rrcp.api.user.entity.User;
-import com.rrcp.api.user.service.UserService;
+import com.rrcp.api.user.service.impl.UserService;
 import com.rrcp.dto.BootStrapTableResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

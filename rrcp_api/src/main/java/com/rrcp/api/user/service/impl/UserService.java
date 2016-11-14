@@ -1,4 +1,4 @@
-package com.rrcp.api.user.service;
+package com.rrcp.api.user.service.impl;
 
 import com.rrcp.api.user.entity.User;
 

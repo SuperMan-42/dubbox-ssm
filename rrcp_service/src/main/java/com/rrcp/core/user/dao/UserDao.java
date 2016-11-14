@@ -1,4 +1,4 @@
-package core.user.dao;
+package com.rrcp.core.user.dao;
 
 import com.rrcp.api.user.entity.User;
 import org.apache.ibatis.annotations.Param;

@@ -1,6 +1,7 @@
-package core.user.quartz;
+package com.rrcp.core.user.quartz;
 
-import core.user.dao.UserDao;
+import com.rrcp.distributed.locks.DistributedLock;
+import com.rrcp.core.user.dao.UserDao;
 import org.apache.zookeeper.KeeperException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +48,7 @@ public class UserQuartz {
      */
     @Scheduled(cron = "0 0/1 9-17 * * ? ")
     public void addUserScore() throws KeeperException, InterruptedException {
-        DistributedLockLock lock = new DistributedLock("192.168.xx.xxx:2181", "quartz");
+        DistributedLock lock = new DistributedLock("127.0.0.1:2181", "quartz");
         if (lock.tryLock()) {
             LOG.info("@Scheduled--------addUserScore()");
             userDao.addScore(10);
