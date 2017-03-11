@@ -151,6 +151,6 @@ dubbo.log4j.level=WARN
 2. 查看日志文件：tail -f log-redis.log
 3. 关闭 redis-cli shutdown
 4. 检查是否启动 redis-cli ping
-5. 
+5. mvn install:install-file -Dfile=umeng-analytics-v6.0.8.jar -DgroupId=com.hpw -DartifactId=umeng -Dversion=6.0.8 -Dpackaging=jar
 
 

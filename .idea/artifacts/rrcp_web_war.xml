@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="rrcp_web:war">
     <output-path>$PROJECT_DIR$/rrcp_web/target</output-path>
-    <root id="archive" name="rrcp_web_1.0.0_20170309.war">
+    <root id="archive" name="rrcp_web_1.0.0_20170311.war">
       <element id="artifact" artifact-name="rrcp_web:war exploded" />
     </root>
   </artifact>
