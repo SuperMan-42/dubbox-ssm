@@ -22,9 +22,9 @@ public class UServiceController {
 
     @RequestMapping(value = "/data", method = RequestMethod.GET, produces = {"application/json;charset=UTF-8"})
     @ResponseBody
-    public BootStrapTableResult<String> data(String data) {
+    public BootStrapTableResult<String> data(String appkey, String signature, Integer serial, String umid, String data) {
         List<String> stringList = new ArrayList<>();
-        stringList.add(UService.getData(data));
+        stringList.add(UService.getData(appkey, signature, serial, umid, data));
         return new BootStrapTableResult<>(stringList);
     }
 }
