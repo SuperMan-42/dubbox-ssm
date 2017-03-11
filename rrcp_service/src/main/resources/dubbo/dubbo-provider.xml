@@ -20,6 +20,6 @@
 
     <!-- 提供的服务接口 -->
     <dubbo:service retries="0" interface="com.rrcp.api.user.service.impl.UserService" ref="userService"/>
-    <!--<dubbo:service retries="0" interface="com.rrcp.api.user.service.impl.UServiceImpl" ref="uService"/>-->
+    <dubbo:service retries="0" interface="com.rrcp.api.user.service.impl.UService" ref="uService"/>
 
 </beans>  
