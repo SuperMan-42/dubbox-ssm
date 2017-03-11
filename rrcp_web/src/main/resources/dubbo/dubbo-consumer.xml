@@ -17,7 +17,7 @@
 
     <!-- 用户服务接口 -->
     <dubbo:reference interface="com.rrcp.api.user.service.impl.UserService" id="userService"/>
-    <dubbo:reference interface="com.rrcp.api.user.service.impl.Service" id="service"/>
+    <!--<dubbo:reference interface="com.rrcp.api.user.service.impl.UService" id="uService"/>-->
 
 
 </beans>  
