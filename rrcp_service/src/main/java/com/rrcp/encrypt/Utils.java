@@ -1,12 +1,6 @@
 package com.rrcp.encrypt;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 import java.util.Random;
-
-import static u.aly.bs.a;
 
 /**
  * Created by Hpw on 2017/3/3.
@@ -94,20 +88,5 @@ public class Utils {
                 return buf;
             }
         }
-    }
-
-    public static void writeFile(File file, byte[] content) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
-
-        try {
-            fileOutputStream.write(content);
-            fileOutputStream.flush();
-        } finally {
-            a((OutputStream) fileOutputStream);
-        }
-    }
-
-    public static void writeFile(File file, String content) throws IOException {
-        writeFile(file, content.getBytes());
     }
 }
