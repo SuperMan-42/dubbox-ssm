@@ -1,5 +1,6 @@
 package com.rrcp.api.user.service.impl;
 
+import com.rrcp.api.user.entity.UmengBean;
 import com.rrcp.encrypt.Encode;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,11 @@ import java.net.URL;
 public class UServiceImpl implements UService {
 
     @Override
-    public String getData(String sdk, String appkey, String signature, Integer serial, String content) {
+    public UmengBean getData(String sdk, String appkey, String signature, Integer serial, String content) {
         return httpUrlConnection(sdk, appkey, signature, serial, content.getBytes());
     }
 
-    private String httpUrlConnection(String sdk, String appkey, String signature, Integer serial, byte[] content) {
+    private UmengBean httpUrlConnection(String sdk, String appkey, String signature, Integer serial, byte[] content) {
         try {
             String pathUrl = "http://alog.umeng.com/app_logs";
             // 建立连接
@@ -55,12 +56,12 @@ public class UServiceImpl implements UService {
 
             if (HttpURLConnection.HTTP_OK == responseCode && var) {// 连接成功
                 // 当正确响应时处理数据
-                return "请求发送成功！！！";
+                return new UmengBean("请求发送成功！！！", encrypt.c().toString());
             } else {
-                return "请求发送失败！！！";
+                return new UmengBean("请求发送失败！！！", null);
             }
         } catch (Exception ex) {
-            return ex.getMessage();
+            return new UmengBean(ex.getMessage(), null);
         }
     }
 }
