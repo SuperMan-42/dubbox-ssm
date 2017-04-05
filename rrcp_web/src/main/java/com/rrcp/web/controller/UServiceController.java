@@ -31,4 +31,15 @@ public class UServiceController {
 
         return new BaseResult(true, result);
     }
+
+    @RequestMapping(value = "/encrypt", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public BaseResult<UmengBean> encrypt(@RequestBody Object object) {
+        HashMap<String, String> hashMap = (HashMap<String, String>) object;
+        UmengBean result = UService.getEncryptData(hashMap.get("sdk"), hashMap.get("appkey"),
+                hashMap.get("signature"), Integer.parseInt(hashMap.get("serial")),
+                hashMap.get("content"));
+
+        return new BaseResult(true, result);
+    }
 }

@@ -1,16 +1,17 @@
 package com.rrcp.api.user.entity;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * Created by Hpw on 2017/3/14.
  */
-public class UmengBean implements Serializable{
+public class UmengBean implements Serializable {
     private static final long serialVersionUID = -4185151304730685014L;
     String info;
-    String data;
+    byte[] data;
 
-    public UmengBean(String info, String data) {
+    public UmengBean(String info, byte[] data) {
         this.info = info;
         this.data = data;
     }
@@ -23,11 +24,11 @@ public class UmengBean implements Serializable{
         this.info = info;
     }
 
-    public String getData() {
+    public byte[] getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(byte[] data) {
         this.data = data;
     }
 
@@ -35,7 +36,7 @@ public class UmengBean implements Serializable{
     public String toString() {
         return "UmengBean{" +
                 "info='" + info + '\'' +
-                ", data='" + data + '\'' +
+                ", data=" + Arrays.toString(data) +
                 '}';
     }
 }

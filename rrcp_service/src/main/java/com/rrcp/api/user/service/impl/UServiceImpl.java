@@ -19,6 +19,12 @@ public class UServiceImpl implements UService {
         return httpUrlConnection(sdk, appkey, signature, serial, content.getBytes());
     }
 
+    @Override
+    public UmengBean getEncryptData(String sdk, String appkey, String signature, Integer serial, String content) {
+        Encode encrypt = Encode.builder(appkey, signature, serial, content.getBytes());
+        return new UmengBean("请求发送成功！！！", encrypt.c());
+    }
+
     private UmengBean httpUrlConnection(String sdk, String appkey, String signature, Integer serial, byte[] content) {
         try {
             String pathUrl = "http://alog.umeng.com/app_logs";
@@ -56,7 +62,7 @@ public class UServiceImpl implements UService {
 
             if (HttpURLConnection.HTTP_OK == responseCode && var) {// 连接成功
                 // 当正确响应时处理数据
-                return new UmengBean("请求发送成功！！！", encrypt.c().toString());
+                return new UmengBean("请求发送成功！！！", encrypt.c());
             } else {
                 return new UmengBean("请求发送失败！！！", null);
             }
