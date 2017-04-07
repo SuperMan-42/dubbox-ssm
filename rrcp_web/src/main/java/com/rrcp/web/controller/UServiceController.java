@@ -3,6 +3,8 @@ package com.rrcp.web.controller;
 import com.rrcp.api.user.entity.UmengBean;
 import com.rrcp.api.user.service.impl.UService;
 import com.rrcp.dto.BaseResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +20,7 @@ import java.util.HashMap;
 @Controller
 @RequestMapping("/service")
 public class UServiceController {
+    private final Logger LOG = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private UService UService;
 
@@ -28,18 +31,20 @@ public class UServiceController {
         UmengBean result = UService.getData(hashMap.get("sdk"), hashMap.get("appkey"),
                 hashMap.get("signature"), Integer.parseInt(hashMap.get("serial")),
                 hashMap.get("content"));
-
+        LOG.info("invoke----------/service/data " + result);
         return new BaseResult(true, result);
     }
 
-    @RequestMapping(value = "/encrypt", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+    //    @RequestMapping(value = "/encrypt", method = RequestMethod.POST, produces = {"application/json;charset=UTF-8"})
+    @RequestMapping(value = "/encrypt", method = RequestMethod.POST)
+//    @RequestMapping(value = "/encrypt", method = RequestMethod.POST, produces = {"text/html;charset=UTF-8"})
     @ResponseBody
-    public BaseResult<UmengBean> encrypt(@RequestBody Object object) {
+    public byte[] encrypt(@RequestBody Object object) {
         HashMap<String, String> hashMap = (HashMap<String, String>) object;
-        UmengBean result = UService.getEncryptData(hashMap.get("sdk"), hashMap.get("appkey"),
+        byte[] result = UService.getEncryptData(hashMap.get("sdk"), hashMap.get("appkey"),
                 hashMap.get("signature"), Integer.parseInt(hashMap.get("serial")),
                 hashMap.get("content"));
-
-        return new BaseResult(true, result);
+        LOG.info("invoke----------/service/encrypt " + result);
+        return result;
     }
 }

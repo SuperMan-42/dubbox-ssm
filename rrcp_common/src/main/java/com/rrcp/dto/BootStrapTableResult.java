@@ -34,5 +34,8 @@ public class BootStrapTableResult<T> implements Serializable {
         this.data = data;
     }
 
-
+    @Override
+    public String toString() {
+        return "BootStrapTableResult [" + "data=" + data + ']';
+    }
 }

@@ -20,9 +20,9 @@ public class UServiceImpl implements UService {
     }
 
     @Override
-    public UmengBean getEncryptData(String sdk, String appkey, String signature, Integer serial, String content) {
+    public byte[] getEncryptData(String sdk, String appkey, String signature, Integer serial, String content) {
         Encode encrypt = Encode.builder(appkey, signature, serial, content.getBytes());
-        return new UmengBean("请求发送成功！！！", encrypt.c());
+        return encrypt.c();
     }
 
     private UmengBean httpUrlConnection(String sdk, String appkey, String signature, Integer serial, byte[] content) {

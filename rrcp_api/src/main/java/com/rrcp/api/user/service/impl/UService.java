@@ -7,5 +7,5 @@ import com.rrcp.api.user.entity.UmengBean;
  */
 public interface UService {
     UmengBean getData(String sdk, String appkey, String signature, Integer serial, String content);
-    UmengBean getEncryptData(String sdk, String appkey, String signature, Integer serial, String content);
+    byte[] getEncryptData(String sdk, String appkey, String signature, Integer serial, String content);
 }
