@@ -1,5 +1,6 @@
 package com.rrcp.encrypt;
 
+import com.rrcp.api.user.entity.Bean;
 import u.aly.bn;
 import u.aly.cl;
 
@@ -62,11 +63,11 @@ public class Encode {
     }
 
     //建造者设计模式
-    public static Encode builder(String appKey, String signature, Integer serial, byte[] content) {
+    public static Encode builder(String appKey, String signature, Integer serial, byte[] content, Bean bean) {
         try {
-            String mac = Utils.getMacAddress(null);//自己创建的
-            String device_id = Utils.getDevice_id(15);//自己创建的
-            Encode encrypt = new Encode(content, appKey, (device_id + mac).getBytes());
+//            String mac = Utils.getMacAddress(null);//自己创建的
+//            String device_id = Utils.getDevice_id(15);//自己创建的
+            Encode encrypt = new Encode(content, appKey, (bean.getDevice_id() + bean.getMc()).getBytes());
             encrypt.setSignature(signature);
             encrypt.setSerial(serial);
             encrypt.setGuid();

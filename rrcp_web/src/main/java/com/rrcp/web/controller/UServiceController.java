@@ -1,5 +1,6 @@
 package com.rrcp.web.controller;
 
+import com.rrcp.api.user.entity.Bean;
 import com.rrcp.api.user.entity.UmengBean;
 import com.rrcp.api.user.service.impl.UService;
 import com.rrcp.dto.BaseResult;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * Created by Hpw on 2017/3/10.
@@ -40,10 +42,10 @@ public class UServiceController {
 //    @RequestMapping(value = "/encrypt", method = RequestMethod.POST, produces = {"text/html;charset=UTF-8"})
     @ResponseBody
     public byte[] encrypt(@RequestBody Object object) {
-        HashMap<String, String> hashMap = (HashMap<String, String>) object;
-        byte[] result = UService.getEncryptData(hashMap.get("sdk"), hashMap.get("appkey"),
-                hashMap.get("signature"), Integer.parseInt(hashMap.get("serial")),
-                hashMap.get("content"));
+        HashMap<String, Object> hashMap = (HashMap<String, Object>) object;
+        byte[] result = UService.getEncryptData((String) hashMap.get("sdk"), (String) hashMap.get("appkey"),
+                (String) hashMap.get("signature"), Integer.parseInt((String) hashMap.get("serial")),
+                (String) hashMap.get("content"), (byte[]) hashMap.get("imprint"), (byte[]) hashMap.get("imprintleast"), (Bean) hashMap.get("bean"));
         LOG.info("invoke----------/service/encrypt " + result);
         return result;
     }

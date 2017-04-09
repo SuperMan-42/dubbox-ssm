@@ -1,6 +1,9 @@
 package com.rrcp.encrypt;
 
-import java.util.Random;
+import com.rrcp.api.user.entity.Bean;
+import u.aly.*;
+
+import java.util.*;
 
 /**
  * Created by Hpw on 2017/3/3.
@@ -87,6 +90,43 @@ public class Utils {
 
                 return buf;
             }
+        }
+    }
+
+    public static String createIdStracking(Bean bean, bm imprint) throws ci {
+        Map<String, bi> a = new HashMap<>();
+        a.put("android_id", new bi("FC4DD4F74AB20000", System.currentTimeMillis(), 1));//identity ts version  注意里面m值得含义与伪造
+        a.put("utdid", new bi("WMupfCDD3Q4DAAAOEN0LF9vq", System.currentTimeMillis(), 1));//identity ts version  注意里面m值得含义与伪造
+        a.put("mac", new bi(bean.getMc(), System.currentTimeMillis(), 1));//identity ts version  注意里面m值得含义与伪造
+        a.put("serial", new bi(bean.getDevice_id(), System.currentTimeMillis(), 1));//identity ts version  注意里面m值得含义与伪造
+        a.put("idfa", new bi("7335c658-0743-4690-a607-b3733795fa92", System.currentTimeMillis(), 1));//identity ts version  注意里面m值得含义与伪造
+        a.put("imei", new bi(bean.getDevice_id(), System.currentTimeMillis(), 1));//identity ts version  注意里面m值得含义与伪造
+        a.put("idmd5", new bi(Encrypt.MD5Encrypt(bean.getDevice_id()), System.currentTimeMillis(), 1));//identity ts version  注意里面m值得含义与伪造
+        bj result = new bj(a);//a
+        if (null != imprint) {
+            byte[] var = (new cl()).a(result);
+            return new sun.misc.BASE64Encoder().encode(var);
+        } else {
+            List<bh> b = new ArrayList<>();
+            b.add(new bh("android_id", "FC4DD4F74AB20000", System.currentTimeMillis()));//domian new_id ts n有点上面m的意思
+            b.add(new bh("mac", bean.getMc(), System.currentTimeMillis()));//domian new_id ts n有点上面m的意思
+            b.add(new bh("idfa", "7335c658-0743-4690-a607-b3733795fa92", System.currentTimeMillis()));//domian new_id ts n有点上面m的意思
+            b.add(new bh("idmd5", Encrypt.MD5Encrypt(bean.getDevice_id()), System.currentTimeMillis()));//domian new_id ts n有点上面m的意思
+            b.add(new bh("utdid", "WMupfCDD3Q4DAAAOEN0LF9vq", System.currentTimeMillis()));//domian new_id ts n有点上面m的意思
+            b.add(new bh("serial", bean.getDevice_id(), System.currentTimeMillis()));//domian new_id ts n有点上面m的意思
+            b.add(new bh("imei", bean.getDevice_id(), System.currentTimeMillis()));//domian new_id ts n有点上面m的意思
+            result.a(b);
+            byte[] var = (new cl()).a(result);
+            return new sun.misc.BASE64Encoder().encode(var);
+        }
+    }
+
+    public static String createImprint(bm imprint) throws ci {
+        if (null != imprint) {
+            byte[] var = (new cl().a(imprint));
+            return new sun.misc.BASE64Encoder().encode(var);
+        } else {
+            return null;
         }
     }
 }
