@@ -49,12 +49,15 @@ public class UServiceImpl implements UService {
                 format.a(temp, imprint);
                 for (Iterator it = mImprint.c.a.entrySet().iterator(); it.hasNext(); ) {
                     Map.Entry e = (Map.Entry) it.next();
-                    if (!((String) e.getKey()).equals("reg_at") && !((String) e.getKey()).equals("reg_channel"))
+                    if (!e.getKey().equals("reg_at") && !e.getKey().equals("reg_channel"))
                         temp.c.a.put((String) e.getKey(), (bl) e.getValue());
                 }
+                temp.c.a.remove("reg_at");
+                temp.c.a.remove("reg_channel");
                 //不是第一次 id_tracking字段比较短包含一个好像是以后不变的 imprint字段有值而且返回一个只有一个字段的imprint result
                 header.put("id_tracking", Utils.createIdStracking(bean, mImprint));
                 header.put("imprint", Utils.createImprint(temp));
+                LOG.info("\ninvoke----------imprint " + temp);
             } else {
                 //第一次 id_tracking字段比较长包含两个 imprint字段没有为null 但是返回一个全字段的imprint result
                 header.put("id_tracking", Utils.createIdStracking(bean, null));

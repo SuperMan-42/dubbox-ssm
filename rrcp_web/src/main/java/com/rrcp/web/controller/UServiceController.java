@@ -5,6 +5,7 @@ import com.rrcp.api.user.entity.Bean;
 import com.rrcp.api.user.entity.UmengBean;
 import com.rrcp.api.user.service.impl.UService;
 import com.rrcp.dto.BaseResult;
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,8 @@ public class UServiceController {
         HashMap<String, Object> hashMap = (HashMap<String, Object>) object;
         byte[] result = UService.getEncryptData((String) hashMap.get("sdk"), (String) hashMap.get("appkey"),
                 (String) hashMap.get("signature"), Integer.parseInt((String) hashMap.get("serial")),
-                (String) hashMap.get("content"), (byte[]) hashMap.get("imprint"), (byte[]) hashMap.get("imprintleast"), JSON.parseObject((String) hashMap.get("bean"), Bean.class));
+                (String) hashMap.get("content"), Base64.decodeBase64((String) hashMap.get("imprint")),
+                Base64.decodeBase64((String) hashMap.get("imprintleast")), JSON.parseObject((String) hashMap.get("bean"), Bean.class));
         LOG.info("invoke----------/service/encrypt " + result.toString());
         return result;
     }
