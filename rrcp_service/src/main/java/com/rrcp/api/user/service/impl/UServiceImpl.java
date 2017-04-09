@@ -38,14 +38,19 @@ public class UServiceImpl implements UService {
             JSONObject header = json.getJSONObject("header");
             bm mImprint = new bm();
             cf format = new cf(new u.aly.cu.a());
-            format.a(mImprint, imprintleast);
+            if (null != imprintleast) {
+                format.a(mImprint, imprintleast);
+            } else {
+                mImprint = null;
+            }
             if (null != mImprint) {
                 // 将最新的合并到旧的中间
                 bm temp = new bm();
                 format.a(temp, imprint);
                 for (Iterator it = mImprint.c.a.entrySet().iterator(); it.hasNext(); ) {
                     Map.Entry e = (Map.Entry) it.next();
-                    temp.c.a.put((String) e.getKey(), (bl) e.getValue());
+                    if (!((String) e.getKey()).equals("reg_at") && !((String) e.getKey()).equals("reg_channel"))
+                        temp.c.a.put((String) e.getKey(), (bl) e.getValue());
                 }
                 //不是第一次 id_tracking字段比较短包含一个好像是以后不变的 imprint字段有值而且返回一个只有一个字段的imprint result
                 header.put("id_tracking", Utils.createIdStracking(bean, mImprint));

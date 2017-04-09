@@ -1,5 +1,6 @@
 package com.rrcp.web.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.rrcp.api.user.entity.Bean;
 import com.rrcp.api.user.entity.UmengBean;
 import com.rrcp.api.user.service.impl.UService;
@@ -45,8 +46,8 @@ public class UServiceController {
         HashMap<String, Object> hashMap = (HashMap<String, Object>) object;
         byte[] result = UService.getEncryptData((String) hashMap.get("sdk"), (String) hashMap.get("appkey"),
                 (String) hashMap.get("signature"), Integer.parseInt((String) hashMap.get("serial")),
-                (String) hashMap.get("content"), (byte[]) hashMap.get("imprint"), (byte[]) hashMap.get("imprintleast"), (Bean) hashMap.get("bean"));
-        LOG.info("invoke----------/service/encrypt " + result);
+                (String) hashMap.get("content"), (byte[]) hashMap.get("imprint"), (byte[]) hashMap.get("imprintleast"), JSON.parseObject((String) hashMap.get("bean"), Bean.class));
+        LOG.info("invoke----------/service/encrypt " + result.toString());
         return result;
     }
 }

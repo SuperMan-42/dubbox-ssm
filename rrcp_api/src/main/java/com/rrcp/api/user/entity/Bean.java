@@ -6,9 +6,12 @@ import java.io.Serializable;
  * Created by Hpw on 2017/3/10.
  */
 
-public class Bean implements Serializable{
+public class Bean implements Serializable {
     private String mc;
     private String device_id;
+
+    public Bean() {
+    }
 
     public Bean(String mc, String device_id) {
         this.mc = mc;
