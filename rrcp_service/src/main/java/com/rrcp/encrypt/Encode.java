@@ -62,7 +62,7 @@ public class Encode {
     }
 
     //建造者设计模式
-    public static Encode builder(String appKey, String signature, int serial, String umid, byte[] content) {
+    public static Encode builder(String appKey, String signature, Integer serial, byte[] content) {
         try {
             String mac = Utils.getMacAddress(null);//自己创建的
             String device_id = Utils.getDevice_id(15);//自己创建的
@@ -70,7 +70,7 @@ public class Encode {
             encrypt.setSignature(signature);
             encrypt.setSerial(serial);
             encrypt.setGuid();
-            encrypt.getInstance(umid);
+//            encrypt.getInstance();//TODO
             return encrypt;
         } catch (Exception e) {
             e.printStackTrace();
@@ -140,16 +140,6 @@ public class Encode {
         stringBuilder.append(this.length);
         stringBuilder.append(Encrypt.ByteToString(this.guid));
         return Encrypt.MD5Encrypt(stringBuilder.toString().getBytes());
-    }
-
-    public void getInstance(String umid) {
-        String address = this.address;
-        String signature = Encrypt.ByteToString(this.signature);
-        byte[] buf = new byte[16];
-        System.arraycopy(this.signature, 2, buf, 0, 16);
-        String checksum = Encrypt.ByteToString(Encrypt.MD5Encrypt(buf));
-
-        //TODO
     }
 
     public String getSignature() {
