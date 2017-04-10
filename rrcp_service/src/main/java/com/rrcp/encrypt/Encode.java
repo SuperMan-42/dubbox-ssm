@@ -67,7 +67,7 @@ public class Encode {
         try {
 //            String mac = Utils.getMacAddress(null);//自己创建的
 //            String device_id = Utils.getDevice_id(15);//自己创建的
-            Encode encrypt = new Encode(content, appKey, (bean.getDevice_id() + bean.getMc()).getBytes());
+            Encode encrypt = new Encode(content, appKey, (bean.getImei() + bean.getMac()).getBytes());
             encrypt.setSignature(signature);
             encrypt.setSerial(serial);
             encrypt.setGuid();

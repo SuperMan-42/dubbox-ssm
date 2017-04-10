@@ -7,30 +7,75 @@ import java.io.Serializable;
  */
 
 public class Bean implements Serializable {
-    private String mc;
-    private String device_id;
+    private String mac;
+    private String android_id;
+    private String utdid;
+    private String serial;
+    private String idfa;
+    private String imei;
+    private String idmd5;
 
     public Bean() {
     }
 
-    public Bean(String mc, String device_id) {
-        this.mc = mc;
-        this.device_id = device_id;
+    public Bean(String mac, String android_id) {
+        this.mac = mac;
+        this.android_id = android_id;
     }
 
-    public String getMc() {
-        return mc;
+    public String getUtdid() {
+        return utdid;
     }
 
-    public void setMc(String mc) {
-        this.mc = mc;
+    public void setUtdid(String utdid) {
+        this.utdid = utdid;
     }
 
-    public String getDevice_id() {
-        return device_id;
+    public String getSerial() {
+        return serial;
     }
 
-    public void setDevice_id(String device_id) {
-        this.device_id = device_id;
+    public void setSerial(String serial) {
+        this.serial = serial;
+    }
+
+    public String getIdfa() {
+        return idfa;
+    }
+
+    public void setIdfa(String idfa) {
+        this.idfa = idfa;
+    }
+
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
+    }
+
+    public String getIdmd5() {
+        return idmd5;
+    }
+
+    public void setIdmd5(String idmd5) {
+        this.idmd5 = idmd5;
+    }
+
+    public String getMac() {
+        return mac;
+    }
+
+    public void setMac(String mac) {
+        this.mac = mac;
+    }
+
+    public String getAndroid_id() {
+        return android_id;
+    }
+
+    public void setAndroid_id(String android_id) {
+        this.android_id = android_id;
     }
 }

@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 import u.aly.bl;
 import u.aly.bm;
 import u.aly.cf;
-import u.aly.ci;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -110,7 +112,15 @@ public class UServiceImpl implements UService {
 
             if (HttpURLConnection.HTTP_OK == responseCode && var) {// 连接成功
                 // 当正确响应时处理数据
-                return new UmengBean("请求发送成功！！！", encrypt.c());
+
+                InputStream inputStream = httpConn.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                String liner;
+                StringBuffer buffer = new StringBuffer();
+                while ((liner = reader.readLine()) != null) {
+                    buffer.append(liner);
+                }
+                return new UmengBean("请求发送成功！！！", buffer.toString());
             } else {
                 return new UmengBean("请求发送失败！！！", null);
             }
