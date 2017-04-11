@@ -4,13 +4,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.rrcp.api.user.entity.Bean;
 import com.rrcp.api.user.entity.UmengBean;
 import com.rrcp.encrypt.Encode;
+import com.rrcp.encrypt.Field;
 import com.rrcp.encrypt.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import u.aly.bl;
+import sun.misc.BASE64Encoder;
 import u.aly.bm;
 import u.aly.cf;
+import u.aly.cl;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -18,8 +20,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * Created by Hpw on 2017/3/10.
@@ -45,25 +45,36 @@ public class UServiceImpl implements UService {
             } else {
                 mImprint = null;
             }
-            if (null != mImprint) {
+            if (null != mImprint) {//最新
                 // 将最新的合并到旧的中间
-                bm temp = new bm();
-                format.a(temp, imprint);
-                for (Iterator it = mImprint.c.a.entrySet().iterator(); it.hasNext(); ) {
-                    Map.Entry e = (Map.Entry) it.next();
-                    if (!e.getKey().equals("reg_at") && !e.getKey().equals("reg_channel"))
-                        temp.c.a.put((String) e.getKey(), (bl) e.getValue());
-                }
-                temp.c.a.remove("reg_at");
-                temp.c.a.remove("reg_channel");
+//                bm temp = new bm();//旧的
+//                format.a(temp, imprint);
+
+//                for (Iterator it = mImprint.c.a.entrySet().iterator(); it.hasNext(); ) {
+//                    Map.Entry e = (Map.Entry) it.next();
+//                    if (!e.getKey().equals("reg_at") && !e.getKey().equals("reg_channel"))
+//                        temp.c.a.put((String) e.getKey(), (bl) e.getValue());
+//                }
+//                temp.c.a.remove("reg_at");
+//                temp.c.a.remove("reg_channel");
                 //不是第一次 id_tracking字段比较短包含一个好像是以后不变的 imprint字段有值而且返回一个只有一个字段的imprint result
                 header.put("id_tracking", Utils.createIdStracking(bean, mImprint));
-                header.put("imprint", Utils.createImprint(temp));
-                LOG.info("\ninvoke----------imprint " + temp);
+//                header.put("imprint", Utils.createImprint(temp));//可能有问题
+//                LOG.info("\ninvoke----------imprint " + temp);
+                Field.getInstance().c(imprint);
+                if (null != Field.getInstance().a()) {
+                    byte[] var = (new cl().a(Field.getInstance().a()));
+                    header.put("imprint", new BASE64Encoder().encode(var));
+                } else {
+                    header.remove("imprint");
+                }
             } else {
                 //第一次 id_tracking字段比较长包含两个 imprint字段没有为null 但是返回一个全字段的imprint result
                 header.put("id_tracking", Utils.createIdStracking(bean, null));
                 header.remove("imprint");
+
+                //重要
+                Field.field = null;
             }
 
             LOG.info("invoke----------json " + json.toString());
