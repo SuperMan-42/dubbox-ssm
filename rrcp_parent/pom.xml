@@ -312,6 +312,12 @@
             <version>1.0.8</version>
         </dependency>
         <!--mybatis 数据访问层 end -->
+        <!--ip代理池-->
+        <dependency>
+            <groupId>com.virjar</groupId>
+            <artifactId>dungproxy-client</artifactId>
+            <version>0.0.6-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <!-- Build Settings -->
     <!--http://maven.apache.org/pom.html#Build_Settings -->
