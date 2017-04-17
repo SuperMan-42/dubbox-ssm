@@ -1,6 +1,5 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
@@ -16,8 +15,6 @@
     <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}"/>
 
     <!-- 用户服务接口 -->
-    <dubbo:reference interface="com.rrcp.api.user.service.impl.UserService" id="userService"/>
     <dubbo:reference interface="com.rrcp.api.user.service.impl.UService" id="uService"/>
-
 
 </beans>  
