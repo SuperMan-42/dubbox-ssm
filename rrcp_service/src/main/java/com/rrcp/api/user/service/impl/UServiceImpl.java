@@ -1,11 +1,13 @@
 package com.rrcp.api.user.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.rrcp.api.user.UmengException;
 import com.rrcp.api.user.entity.Bean;
 import com.rrcp.api.user.entity.UmengBean;
 import com.rrcp.encrypt.Encode;
 import com.rrcp.encrypt.Field;
 import com.rrcp.encrypt.Utils;
+import com.rrcp.enums.RrcpExceptionEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -81,8 +83,7 @@ public class UServiceImpl implements UService {
             Encode encrypt = Encode.builder(appkey, signature, serial, json.toString().getBytes(), bean);
             return encrypt.c();
         } catch (u.aly.ci ci) {
-            ci.printStackTrace();
-            return null;
+            throw new UmengException(RrcpExceptionEnum.ENCRYPT_ERROR.getMsg());
         }
     }
 
