@@ -192,7 +192,7 @@
                     <!-- 加载文件的过滤器，就是你的工程目录了-->
                     <inFilter>com/rrcp/**</inFilter>
                     <!-- 对什么东西进行加载，这里仅有classes成功，毕竟你也不可能对配置文件及JSP混淆吧-->
-                    <injar>rrcp_service_1.0.0_20170417.jar</injar>
+                    <injar>rrcp_service_1.0.0_20170424.jar</injar>
                     <!-- 输出目录-->
                     <outputDirectory>${project.build.directory}</outputDirectory>
                 </configuration>
