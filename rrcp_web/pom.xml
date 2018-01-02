@@ -20,5 +20,10 @@
             <artifactId>rrcp_api</artifactId>
             <version>${rrcp_api.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.hpw</groupId>
+            <artifactId>umeng</artifactId>
+            <version>RELEASE</version>
+        </dependency>
     </dependencies>
 </project>

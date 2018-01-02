@@ -1,18 +1,15 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="rrcp_web:war exploded">
-    <output-path>$PROJECT_DIR$/rrcp_web/target/rrcp_web_1.0.0_20170417</output-path>
+    <output-path>$PROJECT_DIR$/rrcp_web/target/rrcp_web_1.0.0_20180102</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="rrcp_web" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="rrcp_api-1.0.0.jar">
-            <element id="module-output" name="rrcp_api" />
-          </element>
-          <element id="archive" name="rrcp_common-1.0.0.jar">
-            <element id="module-output" name="rrcp_common" />
-          </element>
+          <element id="library" level="project" name="Maven: com.rrcp:rrcp_api:1.0.0" />
+          <element id="library" level="project" name="Maven: com.rrcp:rrcp_common:1.0.0" />
+          <element id="library" level="project" name="Maven: com.hpw:umeng:6.0.8" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
@@ -91,14 +88,10 @@
           <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" />
           <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-runtime:1.0.8" />
           <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-collectionschema:1.0.8" />
-          <element id="library" level="project" name="Maven: com.virjar:dungproxy-client:0.0.6-SNAPSHOT" />
-          <element id="library" level="project" name="Maven: com.ning:async-http-client:1.9.39" />
-          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.9.2" />
-          <element id="library" level="project" name="Maven: com.googlecode.juniversalchardet:juniversalchardet:1.0.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/rrcp_web/target/rrcp_web_1.0.0_20170417/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/rrcp_web/target/rrcp_web_1.0.0_20180102/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="rrcp_web/web/Web" />
     </root>

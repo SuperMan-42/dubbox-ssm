@@ -39,6 +39,8 @@ public class UServiceImpl implements UService {
     public byte[] getEncryptData(String sdk, String appkey, String signature, Integer serial, String content, byte[] imprint, byte[] imprintleast, Bean bean) {
         try {
             JSONObject json = JSONObject.parseObject(content);
+//            System.out.println("invoke----------json " + json.toString());
+//            LOG.info("invoke----------json " + json.toString());
             JSONObject header = json.getJSONObject("header");
             bm mImprint = new bm();
             cf format = new cf(new u.aly.cu.a());
@@ -79,7 +81,6 @@ public class UServiceImpl implements UService {
                 Field.field = null;
             }
 
-            LOG.info("invoke----------json " + json.toString());
             Encode encrypt = Encode.builder(appkey, signature, serial, json.toString().getBytes(), bean);
             return encrypt.c();
         } catch (u.aly.ci ci) {

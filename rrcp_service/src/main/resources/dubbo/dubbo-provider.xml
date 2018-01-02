@@ -17,15 +17,19 @@
     <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port1}"/>-->
     <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port2}"/>-->
     <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port3}"/>-->
-    <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port4}"/>-->
+    <dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port4}"/>
     <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port5}"/>-->
     <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port6}"/>-->
-    <dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port7}"/>
+    <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port7}"/>-->
+    <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port8}"/>-->
+    <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port9}"/>-->
+    <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port10}"/>-->
+    <!--<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port11}"/>-->
 
     <!-- 当ProtocolConfig和ServiceConfig某属性没有配置时,采用此缺省值 -->
-    <dubbo:provider timeout="10000" threadpool="fixed" threads="100" accepts="1000"/>
+    <dubbo:provider timeout="10000" threadpool="fixed" threads="2048" accepts="2048"/>
 
     <!-- 提供的服务接口 -->
-    <dubbo:service retries="0" interface="com.rrcp.api.user.service.impl.UService" ref="uService"/>
+    <dubbo:service retries="2" interface="com.rrcp.api.user.service.impl.UService" ref="uService"/>
 
-</beans>  
+</beans>

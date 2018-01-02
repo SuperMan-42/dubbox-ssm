@@ -313,11 +313,11 @@
         </dependency>
         <!--mybatis 数据访问层 end -->
         <!--ip代理池-->
-        <dependency>
-            <groupId>com.virjar</groupId>
-            <artifactId>dungproxy-client</artifactId>
-            <version>0.0.6-SNAPSHOT</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.virjar</groupId>-->
+            <!--<artifactId>dungproxy-client</artifactId>-->
+            <!--<version>0.0.6-SNAPSHOT</version>-->
+        <!--</dependency>-->
     </dependencies>
     <!-- Build Settings -->
     <!--http://maven.apache.org/pom.html#Build_Settings -->
@@ -336,8 +336,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
